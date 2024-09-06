@@ -4,6 +4,7 @@
 
 package frc.robot;
 
+import frc.robot.Constants.IOConstants;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj.PS4Controller;
@@ -22,8 +23,8 @@ public class RobotContainer {
 
   private void configureBindings() {
     //Chassis driver controls
-    new JoystickButton(driveControl, 4).whileTrue(new ExampleCommand(m_exampleSubsystem, 0.7));
-    new JoystickButton(driveControl, 2).whileTrue(new ExampleCommand(m_exampleSubsystem, -0.7));
+    new JoystickButton(driveControl, IOConstants.buttonTriangle).whileTrue(new ExampleCommand(m_exampleSubsystem, 0.7));
+    new JoystickButton(driveControl, IOConstants.buttonCross).whileTrue(new ExampleCommand(m_exampleSubsystem, -0.7));
   }
 
 

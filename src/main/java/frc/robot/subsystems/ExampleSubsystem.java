@@ -19,7 +19,8 @@ public class ExampleSubsystem extends SubsystemBase{
     cim.set(ControlMode.PercentOutput, velocity);
   }
 
-  public static int getPosition(){
-    return cim.getDeviceID();
+  public static double getPosition(){
+    //Function to get the velocity
+    return cim.getMotorOutputPercent();
   }
 }
