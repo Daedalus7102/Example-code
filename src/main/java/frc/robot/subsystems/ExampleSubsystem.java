@@ -1,11 +1,12 @@
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.motorcontrol.VictorSP;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ExampleSubsystem extends SubsystemBase{
   //private final static Servo servo = new Servo(0);
-  private final static VictorSP cim = new VictorSP(0);
+  private final static VictorSPX cim = new VictorSPX(0);
 
   public ExampleSubsystem() {
   }
@@ -15,10 +16,10 @@ public class ExampleSubsystem extends SubsystemBase{
 
   public void moveServo(double velocity) {
     //servo.setAngle(velocity);
-    cim.set(velocity);
+    cim.set(ControlMode.PercentOutput, velocity);
   }
 
   public static int getPosition(){
-    return cim.getChannel();
+    return cim.getDeviceID();
   }
 }
