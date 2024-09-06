@@ -22,8 +22,8 @@ public class RobotContainer {
 
   private void configureBindings() {
     //Chassis driver controls
-    new JoystickButton(driveControl, 4).whileTrue(new ExampleCommand(m_exampleSubsystem, 0.3));
-    new JoystickButton(driveControl, 2).whileTrue(new ExampleCommand(m_exampleSubsystem, -0.3));
+    new JoystickButton(driveControl, 4).whileTrue(new ExampleCommand(m_exampleSubsystem, 0.7));
+    new JoystickButton(driveControl, 2).whileTrue(new ExampleCommand(m_exampleSubsystem, -0.7));
   }
 
 
