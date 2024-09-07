@@ -22,14 +22,13 @@ public class RobotContainer {
       new DriveCommand(
         chassis,
         () -> (-driveControl.getRawAxis(1)),
-        () -> (driveControl.getRawAxis(4))
+        () -> (driveControl.getRawAxis(2))
       )
     );
   }
 
   private void configureBindings() {
     //Chassis driver controls
-
   }
 
 

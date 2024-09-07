@@ -5,6 +5,7 @@
 package frc.robot.commands;
 import java.util.function.Supplier;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Chassis;
 
@@ -27,13 +28,19 @@ public class DriveCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double speed = this.ySpeed.get() * 0.6;
+    double speed = this.ySpeed.get() * 0.3;
     double turn = this.zSpeed.get() * 0.3;
 
     double left = speed + turn;
     double right = speed - turn;
 
     chassis.drive(left, right);
+
+    SmartDashboard.putNumber("left", left);
+    SmartDashboard.putNumber("right", right);
+
+    SmartDashboard.putNumber("input y", this.ySpeed.get());
+    SmartDashboard.putNumber("input z", this.zSpeed.get());
   }
 
   // Called once the command ends or is interrupted.
