@@ -23,8 +23,8 @@ public class RobotContainer {
 
   private void configureBindings() {
     //Chassis driver controls
-    new JoystickButton(driveControl, IOConstants.buttonTriangle).whileTrue(new ExampleCommand(m_exampleSubsystem, 0.7));
-    new JoystickButton(driveControl, IOConstants.buttonCross).whileTrue(new ExampleCommand(m_exampleSubsystem, -0.7));
+    new JoystickButton(driveControl, IOConstants.buttonTriangle).whileTrue(new ExampleCommand(m_exampleSubsystem, 0.8));
+    new JoystickButton(driveControl, IOConstants.buttonCross).whileTrue(new ExampleCommand(m_exampleSubsystem, -0.8));
   }
 
 

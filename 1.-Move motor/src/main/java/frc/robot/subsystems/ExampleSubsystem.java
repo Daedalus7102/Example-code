@@ -6,9 +6,10 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class ExampleSubsystem extends SubsystemBase{
-  //private final static Servo servo = new Servo(0);
-  private final static VictorSPX cim = new VictorSPX(0);
-  private final static TalonSRX cim2 = new TalonSRX(1);
+  private final static VictorSPX cim0 = new VictorSPX(0);
+  private final static VictorSPX cim1 = new VictorSPX(1);
+  private final static TalonSRX cim2 = new TalonSRX(2);
+  private final static TalonSRX cim3 = new TalonSRX(3);
 
   public ExampleSubsystem() {
   }
@@ -16,14 +17,15 @@ public class ExampleSubsystem extends SubsystemBase{
   @Override
   public void periodic() {}
 
-  public void moveServo(double velocity) {
-    //servo.setAngle(velocity);
-    cim.set(ControlMode.PercentOutput, velocity);
+  public void moveMotor(double velocity) {
+    cim0.set(ControlMode.PercentOutput, velocity);
+    cim1.set(ControlMode.PercentOutput, velocity);
     cim2.set(ControlMode.PercentOutput, velocity);
+    cim3.set(ControlMode.PercentOutput, velocity);
   }
 
   public static double getPosition(){
     //Function to get the velocity
-    return cim.getMotorOutputPercent();
+    return cim0.getMotorOutputPercent();
   }
 }
